@@ -1,0 +1,703 @@
+// ==========================================================================
+// Theme Style Main
+// ==========================================================================
+
+/*!
+Theme Name: Odin
+Author URI: http://wpod.in/
+Description: Odin main stylesheet.
+Author: the Odin team
+Author URI: http://wpod.in/#colaboradores
+*/
+
+@import
+        "variables",           // Theme       Custom Variables
+        "bootstrap/bootstrap", // Bootstrap   Styles Core
+        "wordpress/wordpress", // WordPress   Styles Core
+        //"woocommerce",       // WooCommerce Styles Core
+        "odin/core",           // Odin        Styles Core
+        "pixel-to-em",
+        "layout",               // Theme       Custom Layout
+        "seta"
+;
+// GERAL ###########################
+*{
+	font-family: $font-corpo-texto;
+}
+a{
+	color: $color-link;
+	transition: .3s ease-in-out;
+
+	&:hover{
+		color: $color-link-hover;
+		transition: .3s ease-in-out;
+	}
+}
+body{ //bg do corpo
+	margin-bottom: 0;
+	background: #ffb6c1; /* Old browsers */
+	background: $bg-principal;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5b4d5', endColorstr='#c7a9d3',GradientType=1 ); /* IE6-9 */
+}
+ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+section{ //entre seções
+	padding-bottom: 60px;
+}
+a  img:hover{ //animação de links com imagens
+	opacity: .8;
+}
+.bg--half-screen{ //bg das pags internas
+	width: 100%;
+	height: 60vh;
+	background: black;
+}
+
+.btn{ //botões
+	border: 5px solid $color-link-hover;
+	background: $color-link-hover;
+	border-radius: 0px;
+	padding: 10px 45px;
+	text-transform: uppercase;
+	font-family: $font-corpo;
+	font-weight: bold;
+	color: white;
+	transition: .3s ease-in-out;
+
+	&:hover, &:focus{
+		text-decoration: underline;
+		color: white;
+		background: $color-link-true-hover;
+		border-color: $color-link-true-hover;
+	}
+	&--margin-top{
+		margin-top: 40px;
+	}
+	&--margin-bottom{
+		margin-bottom:60px;
+	}
+	&--white{
+		color: white;
+		border-color: white;
+
+		&:hover{
+			border-color: $color-link-hover;
+		}
+	}
+	&__footer{
+		padding: 7px 28px;
+	}
+}
+.page-header{ //codigo para corrigir erro
+	border-bottom: none;
+}
+
+// HEADER ###################################################################################################################################
+.bg-white{
+	background: white;
+}
+.personal-container{
+	width: 100%;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+.block{
+	height: 10px;
+	min-width: 10px;
+}
+.header{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	flex: 1;
+
+	&__menu{
+		padding: 0;
+		background: none;
+		border: none;
+	}
+}
+.site-title a{
+	font-family: $font-display;
+	font-size: 50px;
+
+	&:hover,&:focus{
+		color: $color-link-true-hover;
+	}
+}
+.navbar-default .navbar-nav > .active > a{
+	background-color: white;
+	color: $color-link;
+}
+.navbar-default{
+	border: none;
+	background: none;
+	li a{
+		padding: 15px;
+		font-style: $font-serif;
+	}
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+	background: none;
+	color: $color-link-hover;
+}	
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+	background: none;
+	color: $color-link-hover;
+}	
+#header nav{
+	a{
+		text-transform: uppercase;
+	}
+}
+.bg--one-third-screen{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	color: white;
+	text-align: center;
+	margin-bottom: $gutter*2;
+	height: 60vh;
+}
+.bg__single--one-third-screen{
+	margin-bottom: $gutter;
+}
+// HOME ######################################################################################################################################
+.animation-delay{
+	&-1{
+		animation-delay: .1s;
+	}
+	&-2{
+		animation-delay: .2s;
+	}
+	&-3{
+		animation-delay: .3s;
+	}
+	&-4{
+		animation-delay: .4s;
+	}
+	&-5{
+		animation-delay: .5s;
+	}
+	&-6{
+		animation-delay: .6s;
+	}
+	&-7{
+		animation-delay: .7s;
+	}
+	&-8{
+		animation-delay: .8s;
+	}
+	&-9{
+		animation-delay: .9s;
+	}
+	&-10{
+		animation-delay: 1s;
+	}
+	&-11{
+		animation-delay: 1.1s;
+	}
+	&-12{
+		animation-delay: 1.2s;
+	}
+	&-13{
+		animation-delay: 1.3s;
+	}
+	&-14{
+		animation-delay: 1.4s;
+	}
+}
+.home{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	&__title{
+		text-align: center;
+		color: white;
+		span{
+			letter-spacing: 6px;
+			font-size: 130px;
+			font-family: $font-display;
+		}
+	}
+	&__btn{
+		margin-top: $gutter;
+		max-width: 300px;
+		align-self: center;
+	}
+	
+	&__titulo-subtitulo{
+		margin-top: $gutter*2;
+		margin-bottom: $gutter*2;
+		&--bg{
+			margin-top: 60px;
+			margin-bottom: 40px;
+		}
+	}
+	&__titulo{
+		font-size: em(40px);
+		font-family: $font-corpo;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: bold;
+		letter-spacing: 4px;
+
+		&--big{
+			text-transform: uppercase;
+			padding: 30px;
+			background: rgba(0,0,0,.7);
+		}
+		&--white{
+			color: white;
+		}
+		&--single{
+			margin-top: $gutter;
+		}
+	}
+	&__subtitulo{
+		font-size: em(35px);
+		i{
+			font-family: $font-serif;
+		}
+		&--center{
+			text-align: center;
+			font-family: $font-serif;
+			font-weight: italic;
+		}
+		&--white{
+			color: white;
+		}
+		&--single{
+			text-align: center;
+			margin-bottom: $gutter*2;
+		}		
+	}
+}
+
+.post-ini{
+	color: white;
+	padding: 60px 20px 10px 20px;
+	background: black;
+	border-radius: $border-radius;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
+	min-height: 250px;
+	text-shadow: 0px 2px 4px rgba(150, 150, 150, 1);
+	margin-bottom: 30px;
+	&--destaque{
+		padding: 60px 10px 15px 20px;
+		min-height: 200px;
+	}
+	&__titulo{
+		margin-top: 0;
+		font-weight: bold;
+		font-family: $font-serif;
+		color: white;
+		&--big{
+			font-size: em(60px);
+		}
+		&--small{
+			font-size: em(30px);
+		}
+	}
+	&__categoria{
+		width: 100%;
+		height: 25px;
+		text-shadow: 0px 2px 4px $color-link-rgba;
+		li{
+			float: left;
+			padding: 3px;
+			margin-right: 10px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.clear-both{
+	clear: both;
+}
+
+//titulo
+.bg__titulo{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	background: black;
+	color: white;
+	margin-bottom: $gutter+10px;
+	background-attachment: fixed;
+}
+.rapha-icon{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+}
+
+.trabalhos-recentes{
+	padding-bottom: $gutter*2;
+}
+
+.contador-EUA{
+	background: $color-bg-eua;
+	padding: $gutter - 10px;
+}
+
+//SOBRE #######################################################################################################################################
+.sobre-inicial{
+	padding-bottom: $gutter*3;
+	&__texto{
+		margin-top: $gutter;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		line-height: 30px;
+	}
+	&__titulo{
+		text-align: left;
+	}
+}
+.detalhes{
+	&__repeater{
+		padding: 0;
+		border: 2px solid $color-bg-footer; 
+		p{
+			margin: 0;
+			padding: 10px;
+		}
+		&--bg{
+			background: $color-bg-footer;
+		}
+	}
+}
+.imagem-redonda{
+	img{
+		border-radius: 100%;	
+	}
+}
+.profissional{
+	text-align: center;
+	&__single{
+		padding: 15px 30px;
+		border-radius: $border-radius;
+		background: white;
+		-webkit-box-shadow: 0px 3px 13px -1px rgba(0,0,0,0.20);
+		-moz-box-shadow: 0px 3px 13px -1px rgba(0,0,0,0.20);
+		box-shadow: 0px 3px 13px -1px rgba(0,0,0,0.20);
+
+		&--corpo{
+			text-align: left;
+		}
+	}
+	i{
+		color: $color-bg-footer;
+	}
+
+}
+.numeros{
+	padding-top: $gutter*2;
+	margin-bottom: $gutter*2;
+	background: $color-bg-neutro-light;
+
+	&__single{
+		&--img{
+			padding-left: 0;
+			padding-right: 15px;
+			border-right: 3px solid gray;
+		}
+	}
+}
+
+//BLOG #################################################################################################################################
+.category-try{
+	ul{
+		margin-bottom: -40px;
+		position: relative;
+
+	}
+	li{
+		float: left;
+		text-transform: uppercase;
+		background: $color-link;
+		border-top-right-radius: 20px;
+		border-bottom-right-radius: 20px;
+
+		&:hover{
+			background: $color-link-hover;
+		}
+
+		a{
+			color: white;
+			font-weight: bold;
+			padding: 10px 20px;
+			display: block;
+		}
+	}
+}
+.post-main{
+	margin-bottom: 50px;
+	background: white;
+	position: relative;
+	&--loop{
+		padding-left: 0;
+	}
+}
+.entry{
+	&-title{
+		margin-top: 30px;
+		text-transform: uppercase;
+		a{
+			font-family: $font-titulo;
+		}
+		&--m-half{
+			margin-top: 15px;
+			a{
+				color: black;
+
+				&:hover{
+					color: $color-link-hover;
+				}
+			}
+		}
+	}
+	
+	&-header--loop{
+		padding-left: 0;
+		img{
+			max-width: 100%;
+		}
+	}
+	&-date{
+		@extend .entry-title;
+		width: 70px;
+		padding: 5px;
+		background: $color-link;
+
+		&__single{
+			background: inherit;
+			border: 3px solid white;
+			color: white;
+			display: block;
+			text-align: center;
+			font-family: $font-titulo;
+			font-size: 16px;
+			line-height: 20px;
+		}
+	}
+}
+.thumb-wrap{
+	position: relative;
+}
+.thumb-overlay{
+	position: absolute;
+	visibility: hidden;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	top:0;
+	left: 0;
+}
+.thumb-bg{
+	background: pink;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+img.thumb-wrap:hover .thumb-overlay{
+	visibility: visible;
+}
+.more-link{
+	font-weight: bold;
+	&--loop{
+		position: absolute;
+		bottom: 20px;
+		right: 30px;
+	}
+}
+
+
+//sidebar
+.sidebar{
+	background: white;
+
+	&--loop{
+		padding: 10px 30px 30px 30px;
+	}
+}
+
+//SINGLE v##################################################################################################################################
+
+.single{
+
+	&__corpo{
+		font-size: 18px;
+		font-weight: normal;
+		margin-bottom: $gutter*2;
+	}
+	&__categoria{
+		margin-top: 117px;
+	}
+	&__content{
+		img{
+			width: 100%;
+			margin-bottom: $gutter;
+		}
+	}
+	&--bg{
+		background: white;
+		margin-top: 60px;
+		margin-bottom: 60px;
+	}
+}
+
+.postado-em{
+	margin-bottom: 1px;
+	color: #6d6c6c;
+	small{
+		font-size: 14px;
+	}
+	span{
+		padding: 5px 25px;
+		vertical-align: bottom;
+		margin-left: 5px;	
+
+		a{
+			color: white;
+		}
+	}
+}
+.post-img{
+	display: block;
+	margin: 0 auto;
+}
+
+// 101 EM 1001 ##############################################################################################
+
+.desafios{
+
+	&__inner{
+		background: white;
+		padding: 20px;
+		margin: 40px 0 60px 0;
+
+		ul{
+			list-style: square;
+			padding-left: 25px;
+		}
+
+		&--front-page{
+			width: 50%;
+			margin: 0 auto;
+			background: rgba(255,255,255,.7);
+			margin-bottom: 60px;
+			font-weight: bold;
+		}
+	}
+
+	&__front-titulo{
+		width: 50%;
+		margin: 0 auto;
+		margin-top: 40px;
+	}
+}
+.check-space{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+}
+//FOOTER ############################################################################################################
+
+.footer{
+	border-top-color: $color-link-hover;
+	background: white;
+	margin: 0;
+	padding-top: $gutter;
+	
+	&__titulo{
+		font-family: $font-titulo;
+		margin-bottom: $gutter;
+	}
+	
+	&__texto{
+		font-family: $font-corpo-texto;
+	}
+
+	&__menu{
+		ul{
+			padding-left: 5px;
+			list-style: none;
+		}
+		li{
+			&:before{
+				content: '- '
+			}
+			a{
+				padding-left: 5px;
+			}
+		}
+	}
+	&__redes-sociais{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		a:hover{
+			-ms-transform: rotate(-10deg) scale(1.2,1.2);
+			-webkit-transform: rotate(-10deg) scale(1.2,1.2);
+			transform: rotate(-10deg) scale(1.2,1.2);
+			transition: .3s ease-in-out;
+		}
+		&--padding{
+			padding-right: 35px;
+		}
+	}
+}
+.recent_post{
+
+	&-date{
+		font-size: 10px;
+		margin-top: 5px;
+		display: inline-block;
+		color: #8c8c8c;
+	}
+	&_img{
+		padding: 0;
+	}
+	&-margin{
+		margin-bottom: 10px;
+		display: block;
+		width: 100%;
+		height: 10px;
+		clear: both;
+	}
+	&-title{
+		font-size: 16px;
+		padding: 0;
+		font-size: 18px;
+		font-family: $font-corpo-texto;
+	}
+	&_content{
+		padding-right: 0;
+	}
+}
+.ultimos-posts__single{
+	padding-right: 0;
+}
+
+.authoring{
+	padding-top: $gutter/2;
+	padding-bottom: $gutter/2;
+	background: rgba(237,237,237,1);
+	width: 100%;
+	p{
+		margin: 0;
+	}
+}
